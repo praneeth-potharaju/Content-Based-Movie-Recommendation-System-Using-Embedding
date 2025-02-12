@@ -1,10 +1,8 @@
 # Content-Based Movie Recommendation System Using Embedding
 
 ## Overview
-This project is a Content-Based movie recommendation system that suggests movies based on user preferences. It uses machine learning techniques such as embeddings, Principal Component Analysis (PCA), and k-nearest neighbors (KNN) for similarity-based recommendations.
+This project is a Content-Based Movie Recommendation System that suggests movies based on user preferences. It leverages BERT embeddings, Principal Component Analysis (PCA), and k-nearest neighbors (KNN) with cosine similarity for accurate recommendations.
 
-• Developed a content-based movie recommendation system using BERT embeddings, PCA, and One-Hot Encoding to analyze descriptions and genres.
-• Implemented KNN with cosine similarity to generate personalized movie suggestions based on user preferences.
 
 ## Features
 - **Overview Embeddings**: Extracts numerical representations of movie overviews.
