@@ -36,10 +36,12 @@ This project is a Content-Based Movie Recommendation System that suggests movies
    - Filter out already liked movies from recommendations.
 
 4. **Addressing Cold Start Problem**
-   - For new users with no prior preferences, recommend top-rated or trending movies.
-   - Use content-based filtering by matching new users with movies of similar genres.
-   - Leverage collaborative filtering if any similar users exist.
-   - Apply hybrid models combining content and collaborative filtering.
+   For users with few liked movies, the system recommends movies by:
+
+    - Expanding Similarity Search: Finding recommendations using broader content-based filtering based on available preferences.
+    - Genre-Based Recommendations: Suggesting movies from genres matching the user's limited preferences.
+    - Adjusting KNN Sensitivity: Lowering similarity thresholds to include more diverse yet relevant recommendations.
+    - Popular Choices as Backup: If insufficient data exists, suggesting highly-rated or trending movies within the user's preferred genres.
 
 
 
