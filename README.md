@@ -1,0 +1,68 @@
+# Content-Based Movie Recommendation System Using Embedding
+
+## Overview
+This project is a Content-Based movie recommendation system that suggests movies based on user preferences. It uses machine learning techniques such as embeddings, Principal Component Analysis (PCA), and k-nearest neighbors (KNN) for similarity-based recommendations.
+
+• Developed a content-based movie recommendation system using BERT embeddings, PCA, and One-Hot Encoding to analyze descriptions and genres.
+• Implemented KNN with cosine similarity to generate personalized movie suggestions based on user preferences.
+
+## Features
+- **Overview Embeddings**: Extracts numerical representations of movie overviews.
+- **PCA Dimensionality Reduction**: Reduces embeddings to optimize performance.
+- **Genre One-Hot Encoding**: Converts genres into numerical form.
+- **KNN for Recommendations**: Uses cosine similarity to find the most relevant movies.
+- **Filtering Liked Movies**: Ensures previously liked movies are not recommended again.
+- **Cold Start Problem Handling**: Implements strategies to recommend movies even when data is sparse.
+
+## Installation
+
+ Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Usage
+
+1. **Preprocess Movie Data**
+   - Load movie data (ID, name, genre, overview, etc.).
+   - Generate embeddings for movie overviews.
+   - Apply PCA for dimensionality reduction.
+   - One-hot encode genres and combine with reduced embeddings.
+
+2. **Generate User Profile**
+   - Compute user preference embeddings based on liked movies.
+
+3. **Find Similar Movies**
+   - Fit a KNN model with movie embeddings.
+   - Retrieve similar movies based on user preferences.
+   - Filter out already liked movies from recommendations.
+
+4. **Addressing Cold Start Problem**
+   - For new users with no prior preferences, recommend top-rated or trending movies.
+   - Use content-based filtering by matching new users with movies of similar genres.
+   - Leverage collaborative filtering if any similar users exist.
+   - Apply hybrid models combining content and collaborative filtering.
+
+## Example Code
+```python
+from sklearn.neighbors import NearestNeighbors
+import numpy as np
+
+# Fit KNN Model
+knn = NearestNeighbors(n_neighbors=10, metric='cosine')
+knn.fit(movie_embeddings)
+
+# Get recommendations
+distances, indices = knn.kneighbors(user_profile.reshape(1, -1), n_neighbors=10)
+recommended_movies = df.iloc[indices.flatten()]['movie_name']
+print("Recommended Movies:", recommended_movies)
+```
+
+## Dependencies
+- Python 3.8+
+- NumPy
+- Pandas
+- Scikit-learn
+- PyTorch (for embeddings)
+
+
