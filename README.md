@@ -41,20 +41,7 @@ This project is a Content-Based Movie Recommendation System that suggests movies
    - Leverage collaborative filtering if any similar users exist.
    - Apply hybrid models combining content and collaborative filtering.
 
-## Example Code
-```python
-from sklearn.neighbors import NearestNeighbors
-import numpy as np
 
-# Fit KNN Model
-knn = NearestNeighbors(n_neighbors=10, metric='cosine')
-knn.fit(movie_embeddings)
-
-# Get recommendations
-distances, indices = knn.kneighbors(user_profile.reshape(1, -1), n_neighbors=10)
-recommended_movies = df.iloc[indices.flatten()]['movie_name']
-print("Recommended Movies:", recommended_movies)
-```
 
 ## Dependencies
 - Python 3.8+
